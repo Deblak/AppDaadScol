@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuItemNavView_menuAccueil"
+        android:checkable="true"
+        android:icon="@drawable/accueil"
+        android:title="Marhaba" />
+    <item
+        android:id="@+id/menuItemNavView_menuEbook"
+        android:checkable="true"
+        android:icon="@drawable/ebook"
+        android:title="Mes ebooks" />
+    <item
+        android:id="@+id/menuItemNavView_menuQuiz"
+        android:checkable="true"
+        android:icon="@drawable/quiz"
+
+        android:title="Quiz"
+        />
+    <item
+        android:id="@+id/menuItemNavView_menuContact"
+        android:checkable="true"
+        android:icon="@drawable/contact"
+        android:title="Contact" />
+    <item
+        android:id="@+id/menuItemNavView_menuPanier"
+        android:checkable="true"
+        android:icon="@drawable/panier"
+        android:title="Panier" />
+</menu>
