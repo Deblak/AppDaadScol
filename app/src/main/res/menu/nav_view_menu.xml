@@ -7,27 +7,26 @@
         android:id="@+id/fragment_accueil"
         android:checkable="true"
         android:icon="@drawable/accueil"
-        android:title="Marhaba" />
+        android:title="@string/marhaba" />
     <item
         android:id="@+id/activity_ebook"
         android:checkable="true"
         android:icon="@drawable/ebook"
-        android:title="Mes ebooks" />
+        android:title="@string/mes_ebooks" />
     <item
         android:id="@+id/menuItemNavView_menuQuiz"
         android:checkable="true"
         android:icon="@drawable/quiz"
-
-        android:title="Quiz"
+        android:title="@string/quiz"
         />
     <item
         android:id="@+id/activity_contact"
         android:checkable="true"
         android:icon="@drawable/contact"
-        android:title="Contact" />
+        android:title="@string/contact" />
     <item
         android:id="@+id/menuItemNavView_menuPanier"
         android:checkable="true"
         android:icon="@drawable/panier"
-        android:title="Panier" />
+        android:title="@string/panier" />
 </menu>
