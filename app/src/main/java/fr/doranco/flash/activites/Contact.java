@@ -9,7 +9,8 @@ import fr.doranco.flash.R;
 public class Contact extends AppCompatActivity {
     //select branch master
     // comit and push
-        //select all
+    //select all
+    //final
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
