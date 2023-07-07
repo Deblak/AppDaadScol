@@ -71,4 +71,3 @@ public class LivreAdapter extends BaseAdapter {
         }
     }
 }
-
