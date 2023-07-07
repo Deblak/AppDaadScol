@@ -17,7 +17,7 @@
         tools:layout="@layout/activity_ebook" />
     <fragment
         android:id="@+id/accueilFragment"
-        android:name="fr.doranco.flash.fragments.accueilFragment"
+        android:name="fr.doranco.flash.fragments.AccueilFragment"
         android:label="fragment_accueil"
         tools:layout="@layout/fragment_accueil" />
 </navigation>

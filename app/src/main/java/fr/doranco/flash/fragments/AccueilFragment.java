@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 import fr.doranco.flash.R;
 
 
-public class accueilFragment extends Fragment {
+public class AccueilFragment extends Fragment {
 
-    public accueilFragment() {
+    public AccueilFragment() {
         // Required empty public constructor
     }
 
