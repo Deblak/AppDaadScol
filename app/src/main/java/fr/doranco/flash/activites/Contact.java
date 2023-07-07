@@ -7,10 +7,7 @@ import android.os.Bundle;
 import fr.doranco.flash.R;
 
 public class Contact extends AppCompatActivity {
-    //select branch master
-    // comit and push
-    //select all
-    //final
+    //test avec Branch test
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
