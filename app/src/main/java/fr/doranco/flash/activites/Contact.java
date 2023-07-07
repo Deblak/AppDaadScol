@@ -8,7 +8,7 @@ import fr.doranco.flash.R;
 
 public class Contact extends AppCompatActivity {
     //test avec Branch test
-
+    //comit and puch
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
