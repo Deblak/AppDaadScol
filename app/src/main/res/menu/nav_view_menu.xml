@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- renomer les id du meme nom que le fichier à mapper -->
 
     <item
-        android:id="@+id/menuItemNavView_menuAccueil"
+        android:id="@+id/fragment_accueil"
         android:checkable="true"
         android:icon="@drawable/accueil"
         android:title="Marhaba" />
     <item
-        android:id="@+id/menuItemNavView_menuEbook"
+        android:id="@+id/activity_ebook"
         android:checkable="true"
         android:icon="@drawable/ebook"
         android:title="Mes ebooks" />
@@ -20,7 +21,7 @@
         android:title="Quiz"
         />
     <item
-        android:id="@+id/menuItemNavView_menuContact"
+        android:id="@+id/activity_contact"
         android:checkable="true"
         android:icon="@drawable/contact"
         android:title="Contact" />

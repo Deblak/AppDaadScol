@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_contact"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:focusableInTouchMode="true"
+    android:orientation="vertical"
     tools:context=".activites.Contact">
 
     <TextView
@@ -27,6 +28,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="40dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="Dupond"
         android:inputType="text"
@@ -34,28 +36,28 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/editText_EmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="dupond@mail.com"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/editText_Name"
-        app:layout_constraintTop_toBottomOf="@+id/editText_Name"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_Name" />
 
     <EditText
         android:id="@+id/editText_Message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:autofillHints=""
         android:background="@color/md_theme_light_onTertiary"
         android:ems="15"
         android:gravity="top"
@@ -70,8 +72,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
         android:id="@+id/button"
