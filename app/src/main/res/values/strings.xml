@@ -39,5 +39,10 @@
     </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="panier">Panier</string>
+    <string name="marhaba">Marhaba</string>
+    <string name="mes_ebooks">Mes ebooks</string>
+    <string name="quiz">Quiz</string>
+    <string name="contact">Contact</string>
 
 </resources>
