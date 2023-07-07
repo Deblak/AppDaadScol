@@ -7,21 +7,27 @@ import androidx.navigation.ui.AppBarConfiguration;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 
 import com.google.android.material.navigation.NavigationView;
 
 import fr.doranco.flash.databinding.ActivityMainBinding;
+import fr.doranco.flash.databinding.FragmentAccueilBinding;
+import fr.doranco.flash.fragments.AccueilFragment;
 
 public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle toggle;
     private ActivityMainBinding binding;
+    private FragmentAccueilBinding fragmentAccueilBinding;
     private AppBarConfiguration appBarConfiguration;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_main);
+        setContentView(binding.getRoot());
+
         setSupportActionBar(binding.topAppBar);
 
         //ajouter le toggler sur le toolbar
@@ -30,4 +36,6 @@ public class MainActivity extends AppCompatActivity {
         toggle.getDrawerArrowDrawable().setColor(getColor(R.color.white));//mettre à jour la couleur
         toggle.syncState();
     }
+
+
 }

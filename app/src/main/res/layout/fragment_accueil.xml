@@ -5,7 +5,7 @@
     android:id="@+id/fragment_accueil"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.accueilFragment">
+    tools:context=".fragments.AccueilFragment">
 
     <!-- TODO: Mettre à jour la mise en page du fragment vide -->
 
