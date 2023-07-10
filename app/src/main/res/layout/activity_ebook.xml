@@ -5,7 +5,7 @@
     android:id="@+id/activity_ebook"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EbookActivity">
+    tools:context=".ui.ebook.EbookActivity">
 
     <ListView
         android:id="@+id/listView"
@@ -24,7 +24,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -13,10 +13,10 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".EbookActivity"
+            android:name=".ui.ebook.EbookActivity"
             android:exported="false" />
         <activity
-            android:name=".activites.Contact"
+            android:name=".ui.contact.ContactActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

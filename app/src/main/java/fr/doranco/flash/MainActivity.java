@@ -1,41 +1,58 @@
 package fr.doranco.flash;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.ui.AppBarConfiguration;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.view.View;
+import android.view.Menu;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
+
 import fr.doranco.flash.databinding.ActivityMainBinding;
-import fr.doranco.flash.databinding.FragmentAccueilBinding;
-import fr.doranco.flash.fragments.AccueilFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private ActionBarDrawerToggle toggle;
+    private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-    private FragmentAccueilBinding fragmentAccueilBinding;
-    private AppBarConfiguration appBarConfiguration;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.topAppBar);
+        setSupportActionBar(binding.appBarMain.toolbar);
 
-        //ajouter le toggler sur le toolbar
-        toggle = new ActionBarDrawerToggle(this, binding.drawerLayout, binding.topAppBar, R.string.openDrawer, R.string.closeDrawer);
-        binding.drawerLayout.addDrawerListener(toggle);
-        toggle.getDrawerArrowDrawable().setColor(getColor(R.color.white));//mettre à jour la couleur
-        toggle.syncState();
+        DrawerLayout drawer = binding.drawerLayout;
+        NavigationView navigationView = binding.navView;
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.nav_quiz, R.id.nav_contact, R.id.nav_ebbok)
+                .setOpenableLayout(drawer)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
+    }
 }
