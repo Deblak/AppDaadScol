@@ -19,7 +19,9 @@
     <!-- Accueil -->
     <string name="accueil_titre1">MANUEL D\’EXERCICES</string>
     <string name="accueil_description_text">
-    Ce manuel d\' exercices est spécialement conçu pour les apprenants souhaitant acquérir une solide maîtrise des lettres arabes.
+    Ce manuel d\'exercices est spécialement conçu pour les apprenants souhaitant acquérir une solide maîtrise des lettres arabes.
+    Avec une approche progressive ce manuel offre une variété d\'exercices pratiques pour développer la reconnaissance, la prononciation et l\'écriture des lettres arabes.
+
     </string>
     <!-- Ebook -->
     <string name="prix">Prix</string>

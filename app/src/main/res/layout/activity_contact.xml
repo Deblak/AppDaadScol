@@ -10,7 +10,7 @@
     tools:context=".ui.contact.ContactActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/contactLayout_topBar"
         android:layout_width="409dp"
         android:layout_height="48dp"
         android:background="@color/md_theme_light_primaryContainer"
@@ -40,12 +40,14 @@
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/contactLayout_topBar"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
+            android:id="@+id/contactLayout_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="top"
             android:orientation="vertical">
 
             <TextView
@@ -139,6 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/montserrat_bold"
                 android:text="@string/contact_tv_message"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
