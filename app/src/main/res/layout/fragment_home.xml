@@ -38,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_bold"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         android:text="114 EXERCICES POUR APPRENDRE L’ARABE PAS À PAS"
