@@ -14,10 +14,7 @@ import java.util.regex.Pattern;
 
 import fr.doranco.flash.databinding.ActivityContactBinding;
 
-/**
- * Envoi du formulaire grace au Intent.
- * Les informations sont réccupérées dans la boîte mail de l'utilisateur.
- */
+
 public class ContactActivity extends AppCompatActivity {
 
     private ActivityContactBinding binding;
@@ -28,11 +25,18 @@ public class ContactActivity extends AppCompatActivity {
         binding = ActivityContactBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        configureForm();
+    }
+
+    /**
+     * Envoi du formulaire grace au Intent.
+     * Les informations sont réccupérées dans la boîte mail de l'utilisateur.
+     */
+    public void configureForm() {
         final EditText form_name = binding.editTextName;
         final EditText form_email = binding.editTextEmail;
         final EditText form_message = binding.editTextMessage;
         Button email = binding.buttonEnvoyer;
-
         email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +62,6 @@ public class ContactActivity extends AppCompatActivity {
                     form_message.requestFocus();
                     return;
                 }
-
                 Intent sendEmail = new Intent(android.content.Intent.ACTION_SEND);
 
                 /* Fill it with Data */
@@ -66,7 +69,6 @@ public class ContactActivity extends AppCompatActivity {
                 sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"monmail@gmail.com"});
                 sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
                         "name:" + name + '\n' + "Email ID:" + email + '\n' + "Message:" + '\n' + message);
-
                 /* Send it off to the Activity-Chooser */
                 startActivity(Intent.createChooser(sendEmail, "En cours d'envoi..."));
             }
