@@ -37,38 +37,41 @@ public class ContactActivity extends AppCompatActivity {
         final EditText form_email = binding.editTextEmail;
         final EditText form_message = binding.editTextMessage;
         Button email = binding.buttonEnvoyer;
-        email.setOnClickListener(v -> {
-            String name = form_name.getText().toString();
-            String email1 = form_email.getText().toString();
-            String message = form_message.getText().toString();
+        email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = form_name.getText().toString();
+                String email = form_email.getText().toString();
+                String message = form_message.getText().toString();
 
-            if (TextUtils.isEmpty(name)) {
-                form_name.setError("Indiquez votre nom, svp.");
-                form_name.requestFocus();
-                return;
+                if (TextUtils.isEmpty(name)) {
+                    form_name.setError("Indiquez votre nom, svp.");
+                    form_name.requestFocus();
+                    return;
+                }
+
+                Boolean onError = false;
+                if (!isValidEmail(email)) {
+                    onError = true;
+                    form_email.setError("Adresse invalide");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(message)) {
+                    form_message.setError("Entrez un message, svp.");
+                    form_message.requestFocus();
+                    return;
+                }
+                Intent sendEmail = new Intent(android.content.Intent.ACTION_SEND);
+
+                /* Fill it with Data */
+                sendEmail.setType("plain/text");
+                sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"monmail@gmail.com"});
+                sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
+                        "name:" + name + '\n' + "Email ID:" + email + '\n' + "Message:" + '\n' + message);
+                /* Send it off to the Activity-Chooser */
+                startActivity(Intent.createChooser(sendEmail, "En cours d'envoi..."));
             }
-
-            Boolean onError = false;
-            if (!isValidEmail(email1)) {
-                onError = true;
-                form_email.setError("Adresse invalide");
-                return;
-            }
-
-            if (TextUtils.isEmpty(message)) {
-                form_message.setError("Entrez un message, svp.");
-                form_message.requestFocus();
-                return;
-            }
-            Intent sendEmail = new Intent(Intent.ACTION_SEND);
-
-            /* Fill it with Data */
-            sendEmail.setType("plain/text");
-            sendEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{"monmail@gmail.com"});
-            sendEmail.putExtra(Intent.EXTRA_TEXT,
-                    "name:" + name + '\n' + "Email ID:" + email1 + '\n' + "Message:" + '\n' + message);
-            /* Send it off to the Activity-Chooser */
-            startActivity(Intent.createChooser(sendEmail, "En cours d'envoi..."));
         });
     }
 
