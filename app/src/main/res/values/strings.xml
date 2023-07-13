@@ -28,7 +28,7 @@
     <string name="description">Description</string>
     <string name="titre">Titre</string>
     <!-- Quiz -->
-    <string name="fragment_quiz_title">Choix du niveau</string>
+    <string name="fragment_quiz_title">Testez vos compétences !</string>
     <!-- Contact -->
     <string name="contact_title">Contact</string>
     <string name="contact_tv_name">Nom</string>

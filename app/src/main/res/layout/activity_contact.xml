@@ -10,7 +10,7 @@
     tools:context=".ui.contact.ContactActivity">
 
     <LinearLayout
-        android:id="@+id/contactLayout_topBar"
+        android:id="@+id/alphabetLayout_topBar"
         android:layout_width="409dp"
         android:layout_height="48dp"
         android:background="@color/md_theme_light_primaryContainer"
@@ -40,7 +40,7 @@
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contactLayout_topBar"
+        app:layout_constraintTop_toBottomOf="@+id/alphabetLayout_topBar"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout

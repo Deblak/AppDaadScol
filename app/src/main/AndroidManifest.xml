@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".ui.quiz.OdreLettreActivity"
+            android:name=".ui.quiz.lire.LireFacileActivity"
             android:exported="false" />
         <activity
             android:name=".ui.ebook.EbookActivity"
