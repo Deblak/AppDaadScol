@@ -33,7 +33,7 @@ public class EbookActivity extends AppCompatActivity {
 
 
         Livre livre1 = new Livre("114 exercices pour apprendre à lire l’arabe!"
-                ,"msid"
+                ,"couverture_livre"
                 ,"TELLI BELDJOUDI Zineb DaadScol Lorem ipsum  "
                 ,29.99);
 

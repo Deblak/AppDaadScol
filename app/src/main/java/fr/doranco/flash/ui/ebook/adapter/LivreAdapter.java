@@ -52,7 +52,7 @@ public class LivreAdapter extends BaseAdapter {
         item.titre.setText(curLivre.getTitre());
         item.prix.setText("Prix " + curLivre.getPrix());
         item.description.setText( curLivre.getDescription());
-        item.image.setImageResource(R.drawable.msid);
+        item.image.setImageResource(R.drawable.couverture_livre);
 
         return convertView;
     }
