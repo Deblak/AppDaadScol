@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import fr.doranco.flash.R;
 
-public class LireFacileActivity extends AppCompatActivity {
+public class StartLireFacile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import fr.doranco.flash.R;
 
 
-public class QuizLireFragment extends Fragment {
+public class QuizLireActivity extends Fragment {
 
 
-    public QuizLireFragment() {
+    public QuizLireActivity() {
         // Required empty public constructor
     }
 
@@ -22,6 +22,6 @@ public class QuizLireFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quiz_lire, container, false);
+        return inflater.inflate(R.layout.activity_quiz_lire, container, false);
     }
 }
