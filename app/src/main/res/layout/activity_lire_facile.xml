@@ -28,6 +28,11 @@
             android:minWidth="48dp"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/baseline_keyboard_backspace_24" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/baseline_star_24" />
     </LinearLayout>
 
 
