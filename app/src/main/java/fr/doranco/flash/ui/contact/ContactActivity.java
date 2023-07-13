@@ -33,7 +33,7 @@ public class ContactActivity extends AppCompatActivity {
     }
 
     private void configureBackButton(){
-        ImageButton backHomeButton = findViewById(R.id.button_backHome);
+        ImageButton backHomeButton = findViewById(R.id.button_backQuiz);
         backHomeButton.setOnClickListener(view -> startActivity(new Intent(ContactActivity.this, MainActivity.class)));
     }
 
