@@ -7,7 +7,8 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/icone_menu_accueil"
-            android:title="@string/menu_home" />
+            android:title="@string/menu_home"
+            />
         <item
             android:id="@+id/nav_ebbok"
             android:icon="@drawable/icone_menu_ebook"
@@ -15,7 +16,9 @@
         <item
             android:id="@+id/nav_quiz"
             android:icon="@drawable/icone_menu_quiz"
-            android:title="@string/menu_quiz" />
+            android:title="@string/menu_quiz"
+
+            />
         <item
             android:id="@+id/nav_contact"
             android:icon="@drawable/icone_menu_contact"
