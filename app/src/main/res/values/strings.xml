@@ -29,6 +29,8 @@
     <string name="titre">Titre</string>
     <!-- Quiz -->
     <string name="fragment_quiz_title">Testez vos compétences !</string>
+
+
     <!-- Contact -->
     <string name="contact_title">Contact</string>
     <string name="contact_tv_name">Nom</string>
@@ -40,6 +42,11 @@
     <string name="contact_button">Envoyer</string>
     <string name="contact_form_post_message">Message en cours d\'envoi…</string>
     <string name="contact_posted">Message envoyé !</string>
+
+    <!-- Quiz Lire -->
+    <string name="quiz_lire_image">lettre à lire</string>
+    <string name="quiz_lire_score">0 / 7</string>
+    <string name="quiz_lire_nextButton">Altaali</string>
 
 
 </resources>
