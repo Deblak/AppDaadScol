@@ -13,16 +13,24 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".ui.quiz.lire.GameOverLireFacile"
+            android:name=".ui.quiz.lire.StartLireBaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.lire.GameOverLireActivity"
             android:exported="false" />
         <activity
             android:name=".ui.quiz.lire.StartLireFacile"
             android:exported="false" />
         <activity
+            android:name=".ui.quiz.lire.StartLireNormal"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.lire.StartLireExpert"
+            android:exported="false" />
+        <activity
             android:name=".ui.quiz.lire.QuizLireActivity"
-            android:label="QuizLireActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"
+            android:label="QuizLireActivity" />
         <activity
             android:name=".ui.ebook.EbookActivity"
             android:exported="false" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.quiz.lire.StartLireFacile">
+    tools:context=".ui.quiz.lire.QuizLireActivity">
 
     <LinearLayout
         android:id="@+id/lireQuizLayout_topBar"
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@id/alphabet_title" />
 
     <Button
-        android:id="@+id/alphabet_buttonFacile"
+        android:id="@+id/quizLire_btnFacile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -70,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@id/alphabet_desc" />
 
     <Button
-        android:id="@+id/alphabet_buttonMoyen"
+        android:id="@+id/quizLire_btnNormal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -80,10 +80,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alphabet_buttonFacile" />
+        app:layout_constraintTop_toBottomOf="@+id/quizLire_btnFacile" />
 
     <Button
-        android:id="@+id/alphabet_buttonDifficile"
+        android:id="@+id/quizLire_BtnExpert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -94,7 +94,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alphabet_buttonMoyen"
+        app:layout_constraintTop_toBottomOf="@+id/quizLire_btnNormal"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="top"
     android:orientation="vertical"
-    tools:context=".ui.quiz.lire.GameOverLireFacile">
+    tools:context=".ui.quiz.lire.GameOverLireActivity">
 
     <LinearLayout
         android:id="@+id/lireQuizLayout_topBar"

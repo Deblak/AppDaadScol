@@ -2,32 +2,56 @@ package fr.doranco.flash.ui.quiz.lire;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-
-import fr.doranco.flash.MainActivity;
+import android.widget.Button;
 import fr.doranco.flash.R;
-import fr.doranco.flash.databinding.ActivityMainBinding;
 import fr.doranco.flash.databinding.ActivityQuizLireBinding;
 
 
-public class QuizLireActivity extends AppCompatActivity {
+public class QuizLireActivity extends AppCompatActivity implements View.OnClickListener {
     private ActivityQuizLireBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityQuizLireBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        Button quizLire_btnFacile = binding.quizLireBtnFacile;
+        Button quizLire_btnNormal = binding.quizLireBtnNormal;
+        Button quizLire_BtnExpert = binding.quizLireBtnExpert;
+
+        quizLire_btnFacile.setOnClickListener(this);
+        quizLire_btnNormal.setOnClickListener(this);
+        quizLire_BtnExpert.setOnClickListener(this);
     }
-    public void startEasyGame(View view) {
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.quizLire_btnFacile) {
+            startQuizFacile();
+        } else if (view.getId() == R.id.quizLire_btnNormal) {
+            startQuizNormal();
+        } else if (view.getId() == R.id.quizLire_BtnExpert) {
+            startQuizExpert();
+        }
+    }
+
+    private void startQuizFacile() {
         Intent intent = new Intent(QuizLireActivity.this, StartLireFacile.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void startQuizNormal() {
+        Intent intent = new Intent(QuizLireActivity.this, StartLireNormal.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void startQuizExpert() {
+        Intent intent = new Intent(QuizLireActivity.this, StartLireExpert.class);
         startActivity(intent);
         finish();
     }

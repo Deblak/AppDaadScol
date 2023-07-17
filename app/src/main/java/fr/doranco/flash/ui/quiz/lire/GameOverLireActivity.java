@@ -1,19 +1,15 @@
 package fr.doranco.flash.ui.quiz.lire;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import fr.doranco.flash.databinding.ActivityGameOverLireBinding;
 
-import fr.doranco.flash.R;
-import fr.doranco.flash.databinding.ActivityGameOverLireFacileBinding;
-import fr.doranco.flash.databinding.ActivityLireFacileBinding;
-
-public class GameOverLireFacile extends AppCompatActivity {
+public class GameOverLireActivity extends AppCompatActivity {
     private TextView tvPoints, tvHighScore;
     private Button btnReplay, btnExit;
     private int points;
@@ -22,7 +18,7 @@ public class GameOverLireFacile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityGameOverLireFacileBinding binding = ActivityGameOverLireFacileBinding.inflate(getLayoutInflater());
+        ActivityGameOverLireBinding binding = ActivityGameOverLireBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         points = getIntent().getExtras().getInt("points");
@@ -42,14 +38,9 @@ public class GameOverLireFacile extends AppCompatActivity {
         }
         tvHighScore.setText("" + pointsSP);
     }
-    public void restart(View view) {
-        Intent intent = new Intent(GameOverLireFacile.this, StartLireFacile.class);
-        startActivity(intent);
-        finish();
-    }
 
     public void exit(View view) {
-        Intent intent = new Intent(GameOverLireFacile.this, QuizLireActivity.class);
+        Intent intent = new Intent(GameOverLireActivity.this, QuizLireActivity.class);
         startActivity(intent);
         finish();
     }

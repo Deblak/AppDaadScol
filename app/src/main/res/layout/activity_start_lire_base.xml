@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.quiz.lire.StartLireFacile">
-
+    tools:context=".ui.quiz.lire.StartLireBaseActivity">
     <!-- Top App Bar -->
     <LinearLayout
-        android:id="@+id/lireFacileLayout_topBar"
+        android:id="@+id/lireLayout_topBar"
         android:layout_width="409dp"
         android:layout_height="48dp"
         android:background="@color/md_theme_light_primaryContainer"
@@ -67,9 +66,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="5dp"
-                app:srcCompat="@drawable/baseline_timer_off_24" />
+                app:srcCompat="@drawable/baseline_timer_24" />
 
             <TextView
+                android:id="@+id/tvTimer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -80,9 +80,8 @@
     </LinearLayout>
 
     <!-- Body -->
-
     <TextView
-        android:id="@+id/tv_lireFacile_question"
+        android:id="@+id/tv_lire_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -92,7 +91,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lireFacileLayout_topBar" />
+        app:layout_constraintTop_toBottomOf="@+id/lireLayout_topBar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -103,12 +102,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_lireFacile_question">
+        app:layout_constraintTop_toBottomOf="@+id/tv_lire_question">
 
         <ImageView
-            android:id="@+id/iv_lireFacile_showImage"
+            android:id="@+id/iv_lire_showImage"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:layout_gravity="center"
             android:contentDescription="TODO"
             app:layout_constraintEnd_toEndOf="parent"
@@ -122,7 +121,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/lireFacile_btn1"
+                android:id="@+id/lire_btn1"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -135,7 +134,7 @@
                 android:textSize="32sp" />
 
             <Button
-                android:id="@+id/lireFacile_btn2"
+                android:id="@+id/lire_btn2"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -154,13 +153,12 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/lireFacile_btn3"
+                android:id="@+id/lire_btn3"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:layout_weight="1"
-
                 android:backgroundTint="@color/md_theme_light_onSecondaryContainer"
                 android:onClick="answerSelected"
                 android:text="waw"
@@ -168,7 +166,7 @@
                 android:textSize="32sp" />
 
             <Button
-                android:id="@+id/lireFacile_btn4"
+                android:id="@+id/lire_btn4"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
