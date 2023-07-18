@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.quiz.intru.QuizIntruActivity">
+    <!-- Top App Bar -->
+    <LinearLayout
+        android:id="@+id/intruQuizLayout_topBar"
+        android:layout_width="409dp"
+        android:layout_height="48dp"
+        android:background="@color/md_theme_light_primaryContainer"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/button_backQuiz"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/md_theme_light_primaryContainer"
+            android:contentDescription="@string/menu_home"
+            android:minWidth="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/baseline_keyboard_backspace_24" />
+    </LinearLayout>
+
+    <!-- Body -->
+    <TextView
+        android:id="@+id/intru_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Dakhil / Intru"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/intruQuizLayout_topBar" />
+
+    <TextView
+        android:id="@+id/intru_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Des intrus se sont glissés dans l'alphabet, à toi de les retrouver !"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/intru_title" />
+
+    <Button
+        android:id="@+id/quizIntru_btnFacile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Débutant"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/intru_desc" />
+
+    <Button
+        android:id="@+id/quizIntru_btnNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Normal"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizIntru_btnFacile" />
+
+    <Button
+        android:id="@+id/quizIntru_btnExpert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Expert"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizIntru_btnNormal"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
