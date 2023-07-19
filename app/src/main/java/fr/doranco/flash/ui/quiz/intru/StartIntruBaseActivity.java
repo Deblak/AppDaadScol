@@ -146,6 +146,9 @@ public abstract class StartIntruBaseActivity extends AppCompatActivity {
      */
     protected void generateIntruQuiz(int index) {
 
+        // Mémoriser l'ID de la bonne réponse avant de mélanger la liste
+        int correctAnswerId = intruList.get(0);
+
         Collections.shuffle(intruList);
         Collections.shuffle(optionList);
 
@@ -160,6 +163,27 @@ public abstract class StartIntruBaseActivity extends AppCompatActivity {
         imgBtn_Intru2.setImageResource(answerList.get(1));
         imgBtn_Intru3.setImageResource(answerList.get(2));
         imgBtn_Intru4.setImageResource(answerList.get(3));
+
+        // Stocker l'ID de la bonne réponse dans les tags des boutons pour la récupérer plus tard
+        imgBtn_Intru1.setTag(answerList.get(0));
+        imgBtn_Intru2.setTag(answerList.get(1));
+        imgBtn_Intru3.setTag(answerList.get(2));
+        imgBtn_Intru4.setTag(answerList.get(3));
+
+        // Rétablir la couleur d'origine des boutons
+        imgBtn_Intru1.setBackgroundColor(R.drawable.round_image_btn);
+        imgBtn_Intru2.setBackgroundColor(R.drawable.round_image_btn);
+        imgBtn_Intru3.setBackgroundColor(R.drawable.round_image_btn);
+        imgBtn_Intru4.setBackgroundColor(R.drawable.round_image_btn);
+
+        // Réactiver les boutons
+        imgBtn_Intru1.setEnabled(true);
+        imgBtn_Intru2.setEnabled(true);
+        imgBtn_Intru3.setEnabled(true);
+        imgBtn_Intru4.setEnabled(true);
+
+        // Réinitialiser le texte de réponse
+        quizIntru_tvResult.setText("");
     }
 
     /**
@@ -168,10 +192,10 @@ public abstract class StartIntruBaseActivity extends AppCompatActivity {
      * @param view change de couleur et de visibilité.
      */
     public void nextQuestionIntru(View view) {
-        imgBtn_Intru1.setBackgroundColor(Color.parseColor("#341000"));
-        imgBtn_Intru2.setBackgroundColor(Color.parseColor("#341000"));
-        imgBtn_Intru3.setBackgroundColor(Color.parseColor("#341000"));
-        imgBtn_Intru4.setBackgroundColor(Color.parseColor("#341000"));
+        imgBtn_Intru1.setBackgroundResource(R.drawable.round_image_btn);
+        imgBtn_Intru2.setBackgroundResource(R.drawable.round_image_btn);
+        imgBtn_Intru3.setBackgroundResource(R.drawable.round_image_btn);
+        imgBtn_Intru4.setBackgroundResource(R.drawable.round_image_btn);
         // Activer les bouttons
         imgBtn_Intru1.setEnabled(true);
         imgBtn_Intru2.setEnabled(true);
@@ -195,7 +219,6 @@ public abstract class StartIntruBaseActivity extends AppCompatActivity {
             // Sinon appeler startIntruQuiz()
             startIntruQuiz();
         }
-
     }
 
     /**
@@ -203,27 +226,22 @@ public abstract class StartIntruBaseActivity extends AppCompatActivity {
      */
     public void answerIntruSelected(View view) {
         // Change la couleur background des Button cliqués
-        view.setBackgroundColor(Color.parseColor("#8EAB12"));
+        view.setBackgroundResource(R.drawable.round_image_btn_true);
         // Désactive les 4 boutons.
         imgBtn_Intru1.setEnabled(false);
         imgBtn_Intru2.setEnabled(false);
         imgBtn_Intru3.setEnabled(false);
         imgBtn_Intru4.setEnabled(false);
-        // Au clique du boutton afficher le texte de réponse à l'utilisateur
-        int selectedImageId = ((ImageButton) view).getId();
-        // Et reccupérer la bonne réponse à la question actuelle de letterList en utilisant index
-        // comme position.
+        // Au clic du boutton afficher le texte de réponse à l'utilisateur
+        int selectedImageId = (int) view.getTag();
         int correctAnswerId = intruList.get(0);
-        // Compare answer et correctAnswer, c'est-à-dire la réponse sélectionnée par l'utilisateur
-        // et la bonne réponse à cette question.
         if (selectedImageId == correctAnswerId) {
             points++;
             intru_tvPoints.setText(points + " / 07");
             quizIntru_tvResult.setText("Bonne réponse !");
-
         } else {
             quizIntru_tvResult.setText("Mauvaise réponse.");
-            view.setBackgroundColor(Color.parseColor("#a94f61"));
+            view.setBackgroundResource(R.drawable.round_image_btn_false);
         }
     }
 
