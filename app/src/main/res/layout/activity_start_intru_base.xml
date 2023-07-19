@@ -119,7 +119,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/round_image_btn"
                 android:contentDescription="Reponse A"
-                android:onClick="intruSelected"
+                android:onClick="answerIntruSelected"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/letter_04_tha"
                 app:tint="@color/black" />
@@ -132,7 +132,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/round_image_btn"
                 android:contentDescription="Reponse B"
-                android:onClick="intruSelected"
+                android:onClick="answerIntruSelected"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/letter_02_ba"
                 app:tint="@color/black" />
@@ -152,7 +152,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/round_image_btn"
                 android:contentDescription="Reponse C"
-                android:onClick="intruSelected"
+                android:onClick="answerIntruSelected"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/letter_07_kha"
                 app:tint="@color/black" />
@@ -165,7 +165,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/round_image_btn"
                 android:contentDescription="Reponse D"
-                android:onClick="intruSelected"
+                android:onClick="answerIntruSelected"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/letter_02_ba_intru"
                 app:tint="@color/black" />

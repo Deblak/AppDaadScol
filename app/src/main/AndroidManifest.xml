@@ -16,6 +16,9 @@
             android:name=".ui.quiz.intru.GameOverIntruActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.quiz.intru.StartIntruFacile"
+            android:exported="false" />
+        <activity
             android:name=".ui.quiz.intru.QuizIntruActivity"
             android:exported="false" />
         <activity

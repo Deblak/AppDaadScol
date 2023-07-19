@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -24,11 +25,11 @@ public abstract class StartIntruBaseActivity extends AppCompatActivity {
     protected TextView quizIntru_tvResult, intru_tvPoints;
     protected ImageButton imgBtn_Intru1, imgBtn_Intru2, imgBtn_Intru3, imgBtn_Intru4;
     //listes
-    protected List<Integer> intruList;
-    protected List<Integer> optionList;
-    protected int currentQuestionIndex;
-    protected int totalQuestions;
-    protected int correctAnswerIndex;
+    protected final ArrayList<Integer> intruList = new ArrayList<>();
+    protected final ArrayList<Integer> optionList = new ArrayList<>();
+    protected int index;
+    // protected int totalQuestions;
+    // protected int correctAnswerIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,31 +44,25 @@ public abstract class StartIntruBaseActivity extends AppCompatActivity {
         imgBtn_Intru3 = binding.imgBtnIntru3;
         imgBtn_Intru4 = binding.imgBtnIntru4;
 
+        // Initialiser l'index de la question à 0
+        index = 0;
+
+        // Générer la liste des intrus et des options (vraies lettres)
+        generateIntruList();
+        generateOptionList();
+        Collections.shuffle(optionList);
+
         // Initialiser les points à 0
         points = 0;
 
-        // Initialiser l'index de la question à 0
-        currentQuestionIndex = 0;
-
-        // Générer la liste des intrus et des options
-        intruList = generateIntruList();
-        optionList = generateOptionList();
-
-        // Obtenir le nombre total de questions
-        totalQuestions = Math.min(intruList.size(), 7);
-
-        // Mélanger les options pour chaque question
-        Collections.shuffle(optionList);
-
-        // Afficher la première question
-        showQuestion(currentQuestionIndex);
+        // Appel de la méthode startGame() responsable du démarrage du quiz.
+        startIntruQuiz();
     }
 
     /**
      * Génère et mélange la liste des intrus
      */
-    protected List<Integer> generateIntruList() {
-        List<Integer> intruList = new ArrayList<>();
+    protected ArrayList<Integer> generateIntruList() {
         intruList.add(R.drawable.letter_01_alif_intru);
         intruList.add(R.drawable.letter_02_ba_intru);
         intruList.add(R.drawable.letter_03_ta_intru);
@@ -103,8 +98,7 @@ public abstract class StartIntruBaseActivity extends AppCompatActivity {
     /**
      * Génère et mélange la liste des options
      */
-    protected List<Integer> generateOptionList() {
-        List<Integer> optionList = new ArrayList<>();
+    protected ArrayList<Integer> generateOptionList() {
         optionList.add(R.drawable.letter_01_alif);
         optionList.add(R.drawable.letter_02_ba);
         optionList.add(R.drawable.letter_03_ta);
@@ -138,105 +132,99 @@ public abstract class StartIntruBaseActivity extends AppCompatActivity {
     }
 
     /**
+     * Méthode qui lance le jeu
+     */
+    protected void startIntruQuiz() {
+        // Lier le texteView des points au comptage de points.
+        intru_tvPoints.setText(points + " / 07");
+        // générer la question
+        generateIntruQuiz(index);
+    }
+
+    /**
      * Affiche la question et les options pour l'index donné
      */
-    protected void showQuestion(int questionIndex) {
-        // Vérifier si toutes les questions ont été posées
-        if (questionIndex >= totalQuestions) {
-            // Cacher les boutons d'intrus
+    protected void generateIntruQuiz(int index) {
+
+        Collections.shuffle(intruList);
+        Collections.shuffle(optionList);
+
+        ArrayList<Integer> answerList = new ArrayList<>();
+        answerList.add(intruList.get(0));
+        answerList.add(optionList.get(0));
+        answerList.add(optionList.get(1));
+        answerList.add(optionList.get(2));
+        Collections.shuffle(answerList);
+
+        imgBtn_Intru1.setImageResource(answerList.get(0));
+        imgBtn_Intru2.setImageResource(answerList.get(1));
+        imgBtn_Intru3.setImageResource(answerList.get(2));
+        imgBtn_Intru4.setImageResource(answerList.get(3));
+    }
+
+    /**
+     * Methode qui s'applique lorsque le bouton Suivant ('Altaali') est appuyé.
+     *
+     * @param view change de couleur et de visibilité.
+     */
+    public void nextQuestionIntru(View view) {
+        imgBtn_Intru1.setBackgroundColor(Color.parseColor("#341000"));
+        imgBtn_Intru2.setBackgroundColor(Color.parseColor("#341000"));
+        imgBtn_Intru3.setBackgroundColor(Color.parseColor("#341000"));
+        imgBtn_Intru4.setBackgroundColor(Color.parseColor("#341000"));
+        // Activer les bouttons
+        imgBtn_Intru1.setEnabled(true);
+        imgBtn_Intru2.setEnabled(true);
+        imgBtn_Intru3.setEnabled(true);
+        imgBtn_Intru4.setEnabled(true);
+
+        index++;
+        // vérifier si toutes les questions ont été posées
+        if (index > 6) {
+            // If true, cacher le ImageView et les Bouttons.
             imgBtn_Intru1.setVisibility(View.GONE);
             imgBtn_Intru2.setVisibility(View.GONE);
             imgBtn_Intru3.setVisibility(View.GONE);
             imgBtn_Intru4.setVisibility(View.GONE);
-
-            // Afficher le score final
-            intru_tvPoints.setText(points + " / 07");
-
-            // Passer à l'activité de fin du jeu
-            Intent intent = new Intent(StartIntruBaseActivity.this, GameOverLireActivity.class);
+            // Aller à l'écran GameOver avec les points
+            Intent intent = new Intent(StartIntruBaseActivity.this, GameOverIntruActivity.class);
             intent.putExtra("points", points);
             startActivity(intent);
             finish();
         } else {
-            // Obtenir l'index de la bonne réponse (intrus)
-            correctAnswerIndex = questionIndex % intruList.size();
-
-            // Récupérer les indices des options pour cette question
-            int optionIndex1 = questionIndex * 4;
-            int optionIndex2 = optionIndex1 + 1;
-            int optionIndex3 = optionIndex1 + 2;
-            int optionIndex4 = optionIndex1 + 3;
-
-            // Récupérer les IDs des images correspondantes
-            int intruImageId = intruList.get(correctAnswerIndex);
-            int optionImageId1 = optionList.get(optionIndex1);
-            int optionImageId2 = optionList.get(optionIndex2);
-            int optionImageId3 = optionList.get(optionIndex3);
-            int optionImageId4 = optionList.get(optionIndex4);
-
-            // Afficher les images dans les boutons d'options
-            imgBtn_Intru1.setImageResource(optionImageId1);
-            imgBtn_Intru2.setImageResource(optionImageId2);
-            imgBtn_Intru3.setImageResource(optionImageId3);
-            imgBtn_Intru4.setImageResource(optionImageId4);
-
-            // Ajouter des tags pour les boutons d'options
-            imgBtn_Intru1.setTag(optionImageId1);
-            imgBtn_Intru2.setTag(optionImageId2);
-            imgBtn_Intru3.setTag(optionImageId3);
-            imgBtn_Intru4.setTag(optionImageId4);
-
-            // Réinitialiser la couleur des boutons
-            imgBtn_Intru1.setBackgroundColor(Color.parseColor("#341000"));
-            imgBtn_Intru2.setBackgroundColor(Color.parseColor("#341000"));
-            imgBtn_Intru3.setBackgroundColor(Color.parseColor("#341000"));
-            imgBtn_Intru4.setBackgroundColor(Color.parseColor("#341000"));
-
-            // Activer les boutons d'options
-            imgBtn_Intru1.setEnabled(true);
-            imgBtn_Intru2.setEnabled(true);
-            imgBtn_Intru3.setEnabled(true);
-            imgBtn_Intru4.setEnabled(true);
-
-            // Afficher le numéro de la question actuelle
-            int questionNumber = questionIndex + 1;
-            quizIntru_tvResult.setText("Question " + questionNumber);
-
-            // Incrémenter l'index de la question actuelle
-            currentQuestionIndex++;
+            // Sinon appeler startIntruQuiz()
+            startIntruQuiz();
         }
+
     }
 
     /**
-     * Change la couleur au clic du bouton et vérifie la réponse sélectionnée
+     * Change la couleur au clic du ImageButton et vérifie la réponse sélectionnée
      */
-    public void intruSelected(View view) {
-        ImageButton selectedButton = (ImageButton) view;
-        int selectedImageId = (int) selectedButton.getTag();
-
-        // Désactiver les boutons d'options pour éviter une sélection multiple
+    public void answerIntruSelected(View view) {
+        // Change la couleur background des Button cliqués
+        view.setBackgroundColor(Color.parseColor("#8EAB12"));
+        // Désactive les 4 boutons.
         imgBtn_Intru1.setEnabled(false);
         imgBtn_Intru2.setEnabled(false);
         imgBtn_Intru3.setEnabled(false);
         imgBtn_Intru4.setEnabled(false);
-
-        if (selectedImageId == intruList.get(correctAnswerIndex)) {
-            // Bonne réponse
-            selectedButton.setBackgroundColor(Color.GREEN);
+        // Au clique du boutton afficher le texte de réponse à l'utilisateur
+        int selectedImageId = ((ImageButton) view).getId();
+        // Et reccupérer la bonne réponse à la question actuelle de letterList en utilisant index
+        // comme position.
+        int correctAnswerId = intruList.get(0);
+        // Compare answer et correctAnswer, c'est-à-dire la réponse sélectionnée par l'utilisateur
+        // et la bonne réponse à cette question.
+        if (selectedImageId == correctAnswerId) {
             points++;
-            intru_tvPoints.setText(points + " / " + totalQuestions);
-            quizIntru_tvResult.setText("Bonne réponse");
+            intru_tvPoints.setText(points + " / 07");
+            quizIntru_tvResult.setText("Bonne réponse !");
+
         } else {
-            // Mauvaise réponse
-            selectedButton.setBackgroundColor(Color.RED);
-            quizIntru_tvResult.setText("Mauvaise réponse");
+            quizIntru_tvResult.setText("Mauvaise réponse.");
+            view.setBackgroundColor(Color.parseColor("#a94f61"));
         }
     }
 
-    /**
-     * Passe à la question suivante
-     */
-    public void nextQuestionIntru(View view) {
-        showQuestion(currentQuestionIndex);
-    }
 }
