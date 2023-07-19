@@ -46,7 +46,7 @@
                 app:srcCompat="@drawable/baseline_star_24" />
 
             <TextView
-                android:id="@+id/lire_tvPoints"
+                android:id="@+id/intru_tvPoints"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -112,28 +112,30 @@
             android:gravity="center">
 
             <ImageButton
-                android:id="@+id/btnBarButtonStyleIntru1"
+                android:id="@+id/imgBtn_Intru1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:onClick="answerSelected"
-                android:scaleType="fitCenter"
-                android:contentDescription="Reponse A"
                 android:background="@drawable/round_image_btn"
-                app:srcCompat="@drawable/letter_04_tha" />
+                android:contentDescription="Reponse A"
+                android:onClick="intruSelected"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/letter_04_tha"
+                app:tint="@color/black" />
 
             <ImageButton
-                android:id="@+id/btnBarButtonStyleIntru2"
+                android:id="@+id/imgBtn_Intru2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:onClick="answerSelected"
-                android:scaleType="fitCenter"
-                android:contentDescription="Reponse B"
                 android:background="@drawable/round_image_btn"
-                app:srcCompat="@drawable/letter_02_ba" />
+                android:contentDescription="Reponse B"
+                android:onClick="intruSelected"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/letter_02_ba"
+                app:tint="@color/black" />
         </TableRow>
 
         <TableRow
@@ -143,28 +145,30 @@
             android:gravity="center">
 
             <ImageButton
-                android:id="@+id/btnBarButtonStyleIntru3"
+                android:id="@+id/imgBtn_Intru3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:onClick="answerSelected"
-                android:scaleType="fitCenter"
-                android:contentDescription="Reponse C"
                 android:background="@drawable/round_image_btn"
-                app:srcCompat="@drawable/letter_07_kha" />
+                android:contentDescription="Reponse C"
+                android:onClick="intruSelected"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/letter_07_kha"
+                app:tint="@color/black" />
 
             <ImageButton
-                android:id="@+id/btnBarButtonStyleIntru4"
+                android:id="@+id/imgBtn_Intru4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:onClick="answerSelected"
-                android:scaleType="fitCenter"
-                android:contentDescription="Reponse D"
                 android:background="@drawable/round_image_btn"
-                app:srcCompat="@drawable/letter_02_ba_intru" />
+                android:contentDescription="Reponse D"
+                android:onClick="intruSelected"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/letter_02_ba_intru"
+                app:tint="@color/black" />
         </TableRow>
 
 
