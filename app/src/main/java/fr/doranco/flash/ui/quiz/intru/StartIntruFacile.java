@@ -1,8 +1,9 @@
-package fr.doranco.flash.ui.quiz.lire;
+package fr.doranco.flash.ui.quiz.intru;
 
 import android.os.Bundle;
 
-public class StartLireFacile extends StartLireBaseActivity {
+public class StartIntruFacile extends StartIntruBaseActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

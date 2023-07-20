@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/alphabet_buttonFacile"
+        android:id="@+id/btn_quizLire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_quiz" />
 
     <Button
-        android:id="@+id/alphabet_buttonMoyen"
+        android:id="@+id/btn_quizClasser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -43,18 +43,18 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alphabet_buttonFacile" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_quizLire" />
 
     <Button
-        android:id="@+id/alphabet_buttonDifficile"
+        android:id="@+id/btn_quizIntrus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Quiz 3"
+        android:text="Dakhil / Intru"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alphabet_buttonMoyen" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_quizClasser" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
