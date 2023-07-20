@@ -116,7 +116,6 @@ public abstract class StartLireBaseActivity extends AppCompatActivity {
         points = 0;
         // Appel de la méthode startGame() responsable du démarrage du quiz.
         startGame();
-
     }
 
     protected void startGame() {
@@ -223,5 +222,10 @@ public abstract class StartLireBaseActivity extends AppCompatActivity {
             // Changer la couleur du boutton
             view.setBackgroundColor(Color.parseColor("#a94f61"));
         }
+    }
+    public void exitQuizLire(View view) {
+        Intent intent = new Intent(StartLireBaseActivity.this, QuizLireActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -11,7 +11,6 @@ import fr.doranco.flash.databinding.ActivityGameOverLireBinding;
 
 public class GameOverLireActivity extends AppCompatActivity {
     private TextView tvPoints, tvHighScore;
-    private Button btnReplay, btnExit;
     private int points;
     SharedPreferences sharedPreferences;
 
@@ -39,7 +38,7 @@ public class GameOverLireActivity extends AppCompatActivity {
         tvHighScore.setText("" + pointsSP);
     }
 
-    public void exit(View view) {
+    public void exitLire(View view) {
         Intent intent = new Intent(GameOverLireActivity.this, QuizLireActivity.class);
         startActivity(intent);
         finish();

@@ -171,10 +171,10 @@ public abstract class StartIntruBaseActivity extends AppCompatActivity {
         imgBtn_Intru4.setTag(answerList.get(3));
 
         // Rétablir la couleur d'origine des boutons
-        imgBtn_Intru1.setBackgroundColor(R.drawable.round_image_btn);
-        imgBtn_Intru2.setBackgroundColor(R.drawable.round_image_btn);
-        imgBtn_Intru3.setBackgroundColor(R.drawable.round_image_btn);
-        imgBtn_Intru4.setBackgroundColor(R.drawable.round_image_btn);
+        imgBtn_Intru1.setBackgroundResource(R.drawable.round_image_btn);
+        imgBtn_Intru2.setBackgroundResource(R.drawable.round_image_btn);
+        imgBtn_Intru3.setBackgroundResource(R.drawable.round_image_btn);
+        imgBtn_Intru4.setBackgroundResource(R.drawable.round_image_btn);
 
         // Réactiver les boutons
         imgBtn_Intru1.setEnabled(true);
