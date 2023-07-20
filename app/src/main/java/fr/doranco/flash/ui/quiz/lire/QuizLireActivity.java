@@ -22,6 +22,7 @@ public class QuizLireActivity extends AppCompatActivity implements View.OnClickL
         binding = ActivityQuizLireBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         ImageButton buttonLire_backQuiz = binding.buttonLireBackQuiz;
         Button quizLire_btnFacile = binding.quizLireBtnFacile;
         Button quizLire_btnNormal = binding.quizLireBtnNormal;
