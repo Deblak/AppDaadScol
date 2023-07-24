@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.quiz.lire.QuizLireActivity">
-
+    tools:context=".ui.quiz.intru.QuizIntruActivity">
+    <!-- Top App Bar -->
     <LinearLayout
-        android:id="@+id/lireQuizLayout_topBar"
+        android:id="@+id/intruQuizLayout_topBar"
         android:layout_width="409dp"
         android:layout_height="48dp"
         android:background="@color/md_theme_light_primaryContainer"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/buttonLire_backQuiz"
+            android:id="@+id/buttonIntru_backQuiz"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_gravity="center"
@@ -30,34 +30,35 @@
             app:srcCompat="@drawable/baseline_keyboard_backspace_24" />
     </LinearLayout>
 
+    <!-- Body -->
     <TextView
-        android:id="@+id/alphabet_title"
+        android:id="@+id/intru_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Yaqra / Lire"
+        android:text="Dakhil / Intru"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lireQuizLayout_topBar" />
+        app:layout_constraintTop_toBottomOf="@id/intruQuizLayout_topBar" />
 
     <TextView
-        android:id="@+id/alphabet_desc"
+        android:id="@+id/intru_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Sais-tu comment se prononce l'alphabet arabe ? Mets-toi à l'épreuve avec ce quiz !"
+        android:text="Des intrus se sont glissés dans l'alphabet, à toi de les retrouver !"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/alphabet_title" />
+        app:layout_constraintTop_toBottomOf="@id/intru_title" />
 
     <Button
-        android:id="@+id/quizLire_btnFacile"
+        android:id="@+id/quizIntru_btnFacile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -67,10 +68,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/alphabet_desc" />
+        app:layout_constraintTop_toBottomOf="@id/intru_desc" />
 
     <Button
-        android:id="@+id/quizLire_btnNormal"
+        android:id="@+id/quizIntru_btnNormal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -80,10 +81,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quizLire_btnFacile" />
+        app:layout_constraintTop_toBottomOf="@+id/quizIntru_btnFacile" />
 
     <Button
-        android:id="@+id/quizLire_BtnExpert"
+        android:id="@+id/quizIntru_btnExpert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -94,7 +95,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quizLire_btnNormal"
+        app:layout_constraintTop_toBottomOf="@+id/quizIntru_btnNormal"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
