@@ -35,6 +35,7 @@ public class QuizIntruActivity extends AppCompatActivity implements View.OnClick
         quizIntru_btnFacile.setOnClickListener(this);
         quizIntru_btnNormal.setOnClickListener(this);
         quizIntru_btnExpert.setOnClickListener(this);
+        buttonIntru_backQuiz.setOnClickListener(this);
     }
 
     @Override

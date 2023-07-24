@@ -245,4 +245,10 @@ public abstract class StartIntruBaseActivity extends AppCompatActivity {
         }
     }
 
+    public void exitQuizIntru(View view) {
+        Intent intent = new Intent(StartIntruBaseActivity.this, QuizIntruActivity.class);
+        startActivity(intent);
+
+        finish();
+    }
 }

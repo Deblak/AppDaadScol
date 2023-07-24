@@ -31,6 +31,7 @@ public class QuizLireActivity extends AppCompatActivity implements View.OnClickL
         quizLire_btnFacile.setOnClickListener(this);
         quizLire_btnNormal.setOnClickListener(this);
         quizLire_BtnExpert.setOnClickListener(this);
+        buttonLire_backQuiz.setOnClickListener(this);
     }
 
 

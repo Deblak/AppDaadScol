@@ -18,6 +18,8 @@
         <activity
             android:name=".ui.quiz.classer.StartClasser"
             android:exported="false" />
+        <activity android:name=".ui.quiz.classer.StartFacile"
+            android:exported="false"/>
         <activity android:name=".ui.quiz.classer.QuizClasserActivity"
             android:exported="false"/>
         <activity

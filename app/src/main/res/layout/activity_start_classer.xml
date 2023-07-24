@@ -218,7 +218,7 @@
             android:onClick="nextQuestionClasser"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="SUIVANT"
+            android:text="ALTALLI"
             android:textColor="@color/md_theme_light_primaryContainer"
             android:backgroundTint="@color/md_theme_light_onSecondaryContainer"
             android:textSize="32sp" />

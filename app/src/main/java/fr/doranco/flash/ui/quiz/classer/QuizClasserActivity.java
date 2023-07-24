@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import fr.doranco.flash.R;
 import fr.doranco.flash.databinding.ActivityQuizClasserBinding;
@@ -20,9 +21,11 @@ public class QuizClasserActivity extends AppCompatActivity implements View.OnCli
         binding = ActivityQuizClasserBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        ImageButton btnBack_quizClasser = binding.btnBackQuiz;
         Button quizClasser_btnCommencer = binding.quizClasserBtnCommencer;
 
         quizClasser_btnCommencer.setOnClickListener(this);
+        btnBack_quizClasser.setOnClickListener(this);
     }
 
     @Override
@@ -33,8 +36,10 @@ public class QuizClasserActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void startQuizClasser() {
-        Intent intent = new Intent(QuizClasserActivity.this, StartClasser.class);
+        Intent intent = new Intent(QuizClasserActivity.this, StartFacile.class);
         startActivity(intent);
         finish();
     }
+
+
 }
