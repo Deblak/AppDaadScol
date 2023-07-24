@@ -47,6 +47,8 @@
     <string name="quiz_lire_image">lettre à lire</string>
     <string name="quiz_lire_score">0 / 7</string>
     <string name="quiz_lire_nextButton">Altaali</string>
+    <string name="quiz_classer_score">quiz_classer_score</string>
+    <string name="lettrequestion">lettre question</string>
 
 
 </resources>

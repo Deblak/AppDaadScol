@@ -12,12 +12,13 @@ import androidx.fragment.app.Fragment;
 
 import fr.doranco.flash.R;
 import fr.doranco.flash.databinding.FragmentQuizBinding;
+import fr.doranco.flash.ui.quiz.classer.QuizClasserActivity;
 import fr.doranco.flash.ui.quiz.intru.QuizIntruActivity;
 import fr.doranco.flash.ui.quiz.lire.QuizLireActivity;
 
 public class QuizFragment extends Fragment implements View.OnClickListener {
     private FragmentQuizBinding binding;
-    private Button btn_quizLire, btn_quizIntrus;
+    private Button btn_quizLire, btn_quizIntrus, btn_quizClasser;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentQuizBinding.inflate(inflater, container, false);
@@ -25,9 +26,11 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
 
         btn_quizLire = binding.btnQuizLire;
         btn_quizIntrus = binding.btnQuizIntrus;
+        btn_quizClasser = binding.btnQuizClasser;
 
         btn_quizLire.setOnClickListener(this);
         btn_quizIntrus.setOnClickListener(this);
+        btn_quizClasser.setOnClickListener(this);
 
         return root;
     }
@@ -40,7 +43,15 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             startLireGame();
         } else if (id == R.id.btn_quizIntrus) {
             startIntruGame();
+        } else if (id == R.id.btn_quizClasser) {
+            startClasserGame();
         }
+    }
+
+    private void startClasserGame() {
+        Intent intent = new Intent(getActivity(), QuizClasserActivity.class);
+        startActivity(intent);
+        getActivity().finish();
     }
 
     private void startLireGame() {

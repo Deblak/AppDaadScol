@@ -13,6 +13,14 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".ui.quiz.classer.GameOver"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.classer.StartClasser"
+            android:exported="false" />
+        <activity android:name=".ui.quiz.classer.QuizClasserActivity"
+            android:exported="false"/>
+        <activity
             android:name=".ui.quiz.intru.GameOverIntruActivity"
             android:exported="false" />
         <activity

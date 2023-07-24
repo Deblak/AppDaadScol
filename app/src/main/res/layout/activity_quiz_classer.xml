@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.quiz.classer.QuizClasserActivity">
+
+    <LinearLayout
+        android:id="@+id/classerQuizLayout_topBar"
+        android:layout_width="409dp"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/md_theme_light_primaryContainer">
+
+
+        <ImageButton
+            android:id="@+id/btn_back_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:contentDescription="@string/menu_home"
+            android:minWidth="48dp"
+            android:background="@color/md_theme_light_primaryContainer"
+            android:src="@drawable/baseline_keyboard_backspace_24"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/classer_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="TASNIF / CLASSER"
+        android:textColor="@color/md_theme_light_onSecondaryContainer"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/classerQuizLayout_topBar" />
+
+    <Button
+        android:id="@+id/quizClasser_btnCommencer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="COMMENCER"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/md_theme_light_primaryContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classer_desc"/>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
